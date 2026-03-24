@@ -1,2 +1,0 @@
-# Salwa-betmut
-Hbd

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🎉 Happy 18th Birthday Salwa! 🎂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Bintang berkedip */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80px 120px, #fff, rgba(0,0,0,0)),
+                radial-gradient(4px 4px at 150px 200px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 250px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 350px 400px, #fff, rgba(0,0,0,0));
+            background-size: 400px 400px;
+            background-repeat: no-repeat;
+            animation: twinkle 2s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50px;
+            padding: 50px 30px;
+            max-width: 550px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            animation: slideUp 0.8s ease-out;
+            margin: 20px;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255,215,0,0.5);
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Hiasan */
+        .corner-flower {
+            position: absolute;
+            font-size: 35px;
+            opacity: 0.6;
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .top-left { top: 10px; left: 10px; }
+        .top-right { top: 10px; right: 10px; }
+        .bottom-left { bottom: 10px; left: 10px; }
+        .bottom-right { bottom: 10px; right: 10px; }
+        
+        .emoji {
+            font-size: 80px;
+            animation: bounce 0.6s ease infinite;
+            display: inline-block;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 15px 0 5px;
+        }
+        
+        .name {
+            font-size: 2.8em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700, #FF8C00, #FF1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+            animation: glow 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px rgba(255,215,0,0.3); }
+            50% { text-shadow: 0 0 20px rgba(255,215,0,0.6); }
+        }
+        
+        .big-eighteen {
+            font-size: 100px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+            animation: pulse 1s infinite;
+            position: relative;
+        }
+        
+        .big-eighteen::before {
+            content: "🎉";
+            position: absolute;
+            left: -30px;
+            top: 20px;
+            font-size: 40px;
+        }
+        
+        .big-eighteen::after {
+            content: "🎉";
+            position: absolute;
+            right: -30px;
+            top: 20px;
+            font-size: 40px;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .message {
+            font-size: 1.1em;
+            color: #444;
+            margin: 20px 0;
+            line-height: 1.7;
+            background: rgba(255,245,235,0.8);
+            padding: 15px;
+            border-radius: 25px;
+        }
+        
+        .celebrate-btn {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            border: none;
+            color: white;
+            padding: 15px 50px;
+            font-size: 1.3em;
+            border-radius: 60px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(255,140,0,0.5);
+        }
+        
+        .celebrate-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255,140,0,0.8);
+        }
+        
+        .footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px dashed #FFD700;
+            color: #888;
+            font-size: 0.85em;
+        }
+        
+        /* Canvas untuk petasan */
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Balon */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            border-radius: 50%;
+            animation: floatBalloon 7s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background: #666;
+        }
+        
+        @keyframes floatBalloon {
+            0% { bottom: -100px; opacity: 1; }
+            80% { opacity: 1; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+        
+        @media (max-width: 600px) {
+            .birthday-card { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .name { font-size: 2em; }
+            .big-eighteen { font-size: 70px; }
+            .big-eighteen::before, .big-eighteen::after { font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <canvas id="fireworks-canvas"></canvas>
+    
+    <div class="birthday-card">
+        <div class="corner-flower top-left">🌸</div>
+        <div class="corner-flower top-right">🌺</div>
+        <div class="corner-flower bottom-left">🌷</div>
+        <div class="corner-flower bottom-right">🌻</div>
+        
+        <div class="emoji">🎉🎂🥳</div>
+        
+        <h1>HAPPY 18th BIRTHDAY</h1>
+        
+        <div class="name">✨ SALWA NABILA ✨</div>
+        
+        <div class="big-eighteen">18</div>
+        
+        <div class="message">
+            🎊 <strong>Selamat! Kamu sekarang resmi DEWASA! 🎊</strong><br><br>
+            🌟 Di usia yang ke-18 ini, semoga:<br>
+            💖 Semua impianmu mulai terwujud<br>
+            🌈 Hidupmu semakin berwarna dan bahagia<br>
+            🚀 Sukses selalu dalam setiap langkah<br>
+            💫 Menjadi pribadi yang lebih kuat dan dewasa<br><br>
+            ✨ <strong>Happy 18th Birthday, Salwa! ✨</strong>
+        </div>
+        
+        <button class="celebrate-btn" onclick="startFireworks()">
+            🎆 RAYAKAN! 🎆
+        </button>
+        
+        <div class="footer">
+            ❤️ From someone who always cares about you ❤️
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script>
+        let balloonInterval;
+        let fireworksInterval;
+        let textInterval;
+        
+        // ========== ANIMASI PETASAN ==========
+        function shootFirework(x, y) {
+            canvasConfetti({
+                particleCount: 80,
+                spread: 120,
+                origin: { x: x || Math.random(), y: y || 0.5 + Math.random() * 0.4 },
+                startVelocity: 25,
+                colors: ['#ff0000', '#ffaa00', '#ff6600', '#ff00ff', '#00ff00', '#ff69b4', '#00ffff', '#ffd700'],
+                decay: 0.9,
+                ticks: 200
+            });
+        }
+        
+        function bigFirework() {
+            // Petasan besar di tengah
+            canvasConfetti({
+                particleCount: 200,
+                spread: 180,
+                origin: { y: 0.5, x: 0.5 },
+                startVelocity: 30,
+                colors: ['#ff0000', '#ffaa00', '#ff6600', '#ff00ff', '#ff69b4', '#ffd700'],
+                decay: 0.8
+            });
+            
+            // Petasan di kiri
+            setTimeout(() => {
+                canvasConfetti({
+                    particleCount: 100,
+                    spread: 140,
+                    origin: { y: 0.4, x: 0.2 },
+                    startVelocity: 28,
+                    colors: ['#ff0000', '#ffaa00', '#00ff00', '#00ffff']
+                });
+            }, 100);
+            
+            // Petasan di kanan
+            setTimeout(() => {
+                canvasConfetti({
+                    particleCount: 100,
+                    spread: 140,
+                    origin: { y: 0.4, x: 0.8 },
+                    startVelocity: 28,
+                    colors: ['#ff00ff', '#ff69b4', '#ffd700', '#ff6600']
+                });
+            }, 100);
+            
+            // Petasan atas
+            setTimeout(() => {
+                canvasConfetti({
+                    particleCount: 80,
+                    spread: 160,
+                    origin: { y: 0.2, x: 0.5 },
+                    startVelocity: 35,
+                    colors: ['#ff0000', '#ffaa00', '#ffff00']
+                });
+            }, 200);
+        }
+        
+        function createTextConfetti() {
+            // Membuat konfeti berbentuk teks HAPPY BIRTHDAY
+            const texts = ['🎉', 'HAPPY', 'BIRTHDAY', '🎂', '18', '🎊', '✨', 'SALWA'];
+            for(let i = 0; i < 30; i++) {
+                const text = texts[Math.floor(Math.random() * texts.length)];
+                canvasConfetti({
+                    particleCount: 1,
+                    spread: 80,
+                    origin: { y: 0.4 + Math.random() * 0.3, x: Math.random() },
+                    startVelocity: 15 + Math.random() * 15,
+                    decay: 0.9,
+                    ticks: 300,
+                    shapes: ['square'],
+                    scalar: 1.2,
+                    colors: ['#ff69b4', '#ffd700', '#ff6b6b', '#4ecdc4', '#aaffaa']
+                });
+            }
+        }
+        
+        function showHappyBirthdayText() {
+            // Buat elemen teks HAPPY BIRTHDAY yang melayang
+            const texts = ['🎉 HAPPY', 'BIRTHDAY', 'SALWA! 🎂', '🎊 18 🎊', '✨ SELAMAT! ✨'];
+            for(let i = 0; i < texts.length; i++) {
+                setTimeout(() => {
+                    const floatingText = document.createElement('div');
+                    floatingText.textContent = texts[i];
+                    floatingText.style.position = 'fixed';
+                    floatingText.style.left = Math.random() * (window.innerWidth - 200) + 100 + 'px';
+                    floatingText.style.top = '50%';
+                    floatingText.style.fontSize = (30 + Math.random() * 20) + 'px';
+                    floatingText.style.fontWeight = 'bold';
+                    floatingText.style.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+                    floatingText.style.zIndex = '1001';
+                    floatingText.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+                    floatingText.style.whiteSpace = 'nowrap';
+                    floatingText.style.pointerEvents = 'none';
+                    floatingText.style.animation = 'floatText 2s ease-out forwards';
+                    document.body.appendChild(floatingText);
+                    
+                    setTimeout(() => {
+                        floatingText.remove();
+                    }, 2000);
+                }, i * 200);
+            }
+        }
+        
+        // Tambah animasi teks melayang
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatText {
+                0% {
+                    opacity: 1;
+                    transform: translateY(0) scale(0.5);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(-150px) scale(1.5);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        function startFireworks() {
+            // Hentikan animasi sebelumnya jika ada
+            if (fireworksInterval) clearInterval(fireworksInterval);
+            
+            // Petasan pertama langsung
+            bigFirework();
+            createTextConfetti();
+            showHappyBirthdayText();
+            
+            // Petasan beruntun
+            let count = 0;
+            fireworksInterval = setInterval(() => {
+                if (count >= 25) {
+                    clearInterval(fireworksInterval);
+                    fireworksInterval = null;
+                } else {
+                    // Random posisi
+                    const x = Math.random();
+                    const y = 0.2 + Math.random() * 0.6;
+                    shootFirework(x, y);
+                    
+                    // Setiap 3 kali petasan, tambah petasan besar
+                    if (count % 3 === 0) {
+                        setTimeout(() => bigFirework(), 50);
+                    }
+                    
+                    // Setiap 5 kali, tampilkan teks lagi
+                    if (count % 5 === 0) {
+                        setTimeout(() => createTextConfetti(), 100);
+                        setTimeout(() => showHappyBirthdayText(), 150);
+                    }
+                    
+                    count++;
+                }
+            }, 250);
+            
+            // Tambah balon
+            startBalloons();
+            
+            // Efek getar
+            if (navigator.vibrate) {
+                navigator.vibrate([200, 100, 200, 100, 300]);
+            }
+            
+            // Animasi tombol
+            const btn = document.querySelector('.celebrate-btn');
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Alert setelah animasi
+            setTimeout(() => {
+                alert('🎆 HAPPY BIRTHDAY SALWA! 🎆\n\n✨ Selamat menjadi pribadi yang lebih dewasa! ✨\n\n🎂 18 Tahun! 🎉');
+            }, 500);
+        }
+        
+        // ========== BALON ==========
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#ffb6c1', '#dda0dd', '#f0e68c', '#ff9999'];
+            balloon.style.background = `radial-gradient(circle at 30% 30%, ${colors[Math.floor(Math.random() * colors.length)]}, ${colors[Math.floor(Math.random() * colors.length)]})`;
+            balloon.style.left = Math.random() * window.innerWidth + 'px';
+            balloon.style.width = 45 + Math.random() * 20 + 'px';
+            balloon.style.height = 60 + Math.random() * 25 + 'px';
+            balloon.style.animationDuration = 6 + Math.random() * 5 + 's';
+            balloon.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.remove();
+            }, 10000);
+        }
+        
+        function startBalloons() {
+            if (balloonInterval) clearInterval(balloonInterval);
+            for(let i = 0; i < 12; i++) {
+                setTimeout(() => createBalloon(), i * 200);
+            }
+            balloonInterval = setInterval(() => createBalloon(), 1000);
+            
+            // Hentikan balon setelah 15 detik
+            setTimeout(() => {
+                if (balloonInterval) {
+                    clearInterval(balloonInterval);
+                    balloonInterval = null;
+                }
+                const balloons = document.querySelectorAll('.balloon');
+                balloons.forEach(b => b.remove());
+            }, 15000);
+        }
+        
+        // Auto confetti saat load
+        setTimeout(() => {
+            canvasConfetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.5 }
+            });
+        }, 500);
+        
+        // Klik anywhere for mini confetti
+        document.body.addEventListener('click', function(e) {
+            if (e.target.classList && e.target.classList.contains('celebrate-btn')) return;
+            canvasConfetti({
+                particleCount: 15,
+                spread: 45,
+                origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
+                colors: ['#ff69b4', '#ffd700', '#ff6b6b']
+            });
+        });
+        
+        // Animasi angka 18
+        const eighteen = document.querySelector('.big-eighteen');
+        let count = 0;
+        function animateNumber() {
+            if (count <= 18) {
+                eighteen.textContent = count;
+                count++;
+                setTimeout(animateNumber, 70);
+            } else {
+                eighteen.textContent = '18';
+            }
+        }
+        animateNumber();
+        
+        console.log('🎉 Selamat Ulang Tahun Salwa! 🎂');
+    </script>
+</body>
+  </html>
